@@ -1,0 +1,216 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2015 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[11pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% moderncv themes
+\moderncvstyle{classic}                             % style options are 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
+\moderncvcolor{blue}                               % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+
+% remove phone and email symbol
+\renewcommand*{\emailsymbol}         {}
+\renewcommand*{\mobilephonesymbol}   {}
+
+% character encoding
+\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+\usepackage[ngerman]{babel}
+\usepackage{datetime}
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+\newdateformat{myformat}{\THEDAY{. }\monthname[\THEMONTH], \THEYEAR}
+
+% adjust the page margins
+%\usepackage[scale=0.75]{geometry}
+\usepackage{geometry}
+\geometry{a4paper,left=2.5cm,right=2cm, top=2.5cm, bottom=2.5cm,headheight=21pt}
+
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+% personal data
+\name{Konstantin}{Bolshakov}
+\title{Lebenslauf}                               % optional, remove / comment the line if not wanted
+%\address{Wundtstr. 7}{01217 Dresden}{}% optional, remove / comment the line if not wanted; the "postcode city" and "country" arguments can be omitted or provided empty
+%\phone[mobile]{+49~(178)~607~606~4}                   % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
+%\phone[fixed]{+2~(345)~678~901}
+%\phone[fax]{+3~(456)~789~012}
+%\email{konstantin.bolshakov.96@gmail.com}                               % optional, remove / comment the line if not wanted
+%\homepage{www.johndoe.com}                         % optional, remove / comment the line if not wanted
+%\social[linkedin]{konstantinbo}                        % optional, remove / comment the line if not wanted
+%\social[twitter]{jdoe}                             % optional, remove / comment the line if not wanted
+%\social[github]{konstantinbo}                              % optional, remove / comment the line if not wanted
+\extrainfo{
+Geburtsdatum: 25.06.1996 \\
+Geburtsort: Moskau, Russland \\
+Staatsangehörigkeit: Russisch \\
+Familienstand: Ledig
+}
+\photo[100pt][0.4pt]{picture}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+%\quote{Some quote}                                 % optional, remove / comment the line if not wanted
+
+% bibliography adjustements (only useful if you make citations in your resume, or print a list of publications using BibTeX)
+%   to show numerical labels in the bibliography (default is to show no labels)
+\makeatletter\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}\makeatother
+%   to redefine the bibliography heading string ("Publications")
+%\renewcommand{\refname}{Articles}
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+
+
+%Manually add a subsubsection
+\renewcommand*{\sectionfont}{\Large\mdseries\upshape}
+\renewcommand*{\subsectionfont}{\large\mdseries\upshape}
+\newcommand*{\subsubsectionfont}{\large\mdseries\itshape}% New subsubsection font
+\newcommand*{\subsubsectionstyle}[1]{{\subsubsectionfont\textcolor{color1}{#1}}}
+\makeatletter
+\NewDocumentCommand{\subsubsection}{sm}{%
+  \par\addvspace{1ex}%
+  \phantomsection{}% reset the anchor for hyperrefs
+  \addcontentsline{toc}{subsubsection}{#2}%
+  \begin{tabular}{@{}p{\hintscolumnwidth}@{\hspace{\separatorcolumnwidth}}p{\maincolumnwidth}@{}}%
+    \raggedleft\hintstyle{} &{\strut\subsubsectionstyle{#2}}%
+  \end{tabular}%
+  \par\nobreak\addvspace{0.5ex}\@afterheading}% to avoid a pagebreak after the heading
+\makeatother
+
+\usepackage{fancyhdr}% http://ctan.org/pkg/fancyhdr
+\pagestyle{fancy}% Change page style to fancy
+\fancyhf{}% Clear header/footer
+\fancyhead[C]{Konstantin Bolshakov, Wundstr. 7 (Zim. 15092), 01217 Dresden, +49 178 607 606 4, \href{mailto:konstantin.bolshakov.96@gmail.com}{konstantin.bolshakov.96@gmail.com}}
+%\fancyfoot[C]{Footer}
+\fancyfoot[R]{\textit{\thepage}}
+\renewcommand{\headrulewidth}{0.4pt}% Default \headrulewidth is 0.4pt
+%\renewcommand{\footrulewidth}{0.4pt}% Default \footrulewidth is 0pt
+
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
+
+\section{Akademischer Werdegang}
+\cventry{10.2014--heute}{Bachelor of Science Informatik}{Technische Universität Dresden}{Dresden}{}{}  % arguments 3 to 6 can be left empty
+\cvline{Vertiefungen}{\small Computer Vision, Information Retrieval, Big Data Platforms, Kryptographie und -analyse}
+\cvline{Schwerpunkte}{\small Programmierung, Softwaretechnologie und -projekt, Datenbanken und Rechnernetze, Systemorientierte Informatik / Hardware Software-Codesign}
+\section{Schulische Ausbildung}
+\cventry{09.2007--06.2014}{Allgemeine Hochschulreife}{Europagymnasium Walther-Rathenau}{Bitterfeld}{Note: \textit{1,5}}{}
+
+%\section{Master thesis}
+%\cvitem{title}{\emph{Title}}
+%\cvitem{supervisors}{Supervisors}
+%\cvitem{description}{Short thesis abstract}
+
+\section{Beruflicher Werdegang}
+\subsection{Studentische Nebentätigkeit}
+\cventry{12.2015--03.2016}{SHK Tutor Robolab}{TU Dresden}{Dresden}{}{%
+Tutorentätigkeit für das Einführungspraktikum "Robolab", bei dem LEGO-Roboter für spezielle Labyrinthe programmiert werden %
+\begin{itemize}
+\item Beratung der Studenten beim Programmieren
+\item tägliche SCRUM-Meetings
+\item Vorbereitung der Labyrinthe
+\item Prüfung der Studenten
+\end{itemize}
+}
+\subsection{Nebentätigkeit}
+\cventry{01.2014--heute}{IT Consultant}{Hausarztpraxis Elena Bolshakova}{Bitterfeld}{}{%
+Aufgaben:%
+\begin{itemize}%
+\item Beratung bei IT Investitionen, insbesondere Hardwareauswahl
+\item Support medizinischer Verwaltungssoftware TurboMed:
+  \begin{itemize}%
+  \item Abrechnung von Privatliquidationen, Kassenabrechnungen und DMP-Abrechnungen
+  \item Fernwartung
+  \item Schulung
+  \end{itemize}
+\item Hard- und Softwareberatung
+\end{itemize}
+}
+
+\section{Auslandserfahrung}
+\cventry{04.2012}{Schüleraustausch in England}{}{Eastbourne}{}{Ziele:
+\begin{itemize}%
+\item Sammlung interkultureller Erfahrung
+\item Erweiterung des englischen Wortschatzes
+\end{itemize}
+}
+
+\clearpage
+
+\section{Kenntnisse und Fähigkeiten}
+\subsection{Sprachen}
+\cvitemwithcomment{Deutsch}{Muttersprache}{Zweisprachig aufgewachsen}
+\cvitemwithcomment{Russisch}{Muttersprache}{Zweisprachig aufgewachsen}
+\cvitemwithcomment{Englisch}{Verhandlungssicher}{C1-äquivalent}
+\cvitemwithcomment{Französisch}{Grundkenntnisse}{}
+\subsection{EDV}
+
+%\section{IT Kenntnisse}
+
+\subsubsection{Sehr gute Kenntnisse mit}
+\cvline{Sprachen}{C, C++, Java, HTML, CSS, Pascal}
+\cvline{Technologien}{git, Ubuntu Linux, Windows, Microsoft Office}
+\cvline{Hardware}{Notebooks, Desktops, Raspberry Pi und ähnlichen Embedded-Boards}
+\subsubsection{Habe Erfahrung mit}
+\cvline{Sprachen}{Python, XML, Javascript, Haskell}
+\cvline{Technologien}{Bash scripting, JUnit, jQuery, SQL, Travis CI,  IBM DB2, SQLite, Apache, Visual Studio, Eclipse, Netbeans}
+
+\subsection{Führerschein}
+\cvline{Klasse}{AM/B/L}
+
+
+
+\section{Persönliche Interessen}
+\cventry{2013-heute}{Fitness}{Sportstudio}{Dresden/Bitterfeld}{}{
+\begin{itemize}
+\item 2 mal pro Woche sportlich tätig (Krafttraining)
+\end{itemize}
+}
+\cventry{2007-2015}{Vereinsschachspieler}{Schachgemeinschaft 1871 Löberitz e.V.}{Löberitz}{}{
+\begin{itemize}
+\item Täglich geübt
+\item an verschiedenen Turnieren vor allem in Sachsen-Anhalt und anderen östlichen Bundesländern teilgenommen
+\end{itemize}
+}
+\cventry{}{Weitere Interessen und Hobbies}{}{}{}{
+Fotografie, Programmierung, PC-Bau, Klavier, Reisen, Wandern
+}
+
+
+
+
+% Publications from a BibTeX file without multibib
+%  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
+%  to redefine the heading string ("Publications"): \renewcommand{\refname}{Articles}
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{publications}                        % 'publications' is the name of a BibTeX file
+
+% Publications from a BibTeX file using the multibib package
+%\section{Publications}
+%\nocitebook{book1,book2}
+%\bibliographystylebook{plain}
+%\bibliographybook{publications}                   % 'publications' is the name of a BibTeX file
+%\nocitemisc{misc1,misc2,misc3}
+%\bibliographystylemisc{plain}
+%\bibliographymisc{publications}                   % 'publications' is the name of a BibTeX file
+
+\vfill 
+\includegraphics[height=2.5\baselineskip]{signature.pdf}\\% Insert signature \\
+Konstantin Bolshakov
+\hfill Dresden, \myformat\today
+\end{document}
+
+
+%% end of file `template.tex'.
